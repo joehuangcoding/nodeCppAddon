@@ -1,0 +1,22 @@
+{
+  "name": "test-addon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build:dev": "set npm_config_arch=x64&&set npm_config_runtime=node&&set npm_config_target=10.15.3&& node-gyp configure --debug&& node-gyp -j 16 rebuild --debug",
+    "build": "set npm_config_arch=x64&&set npm_config_runtime=node&&set npm_config_target=10.15.3&& node-gyp configure --debug && node-gyp build",
+    "rebuild:dev": "node-gyp -j 16 rebuild --debug",
+    "rebuild": "node-gyp -j 16 rebuild",
+    "clean": "node-gyp clean"
+ },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-gyp": "^5.0.3"
+  },
+  "dependencies": {
+    "node-addon-api": "^1.7.1"
+  }
+}
